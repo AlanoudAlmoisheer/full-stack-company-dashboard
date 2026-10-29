@@ -1,0 +1,61 @@
+<div class="dashboard-container">
+
+  <app-header></app-header>
+
+  <div class="dashboard-intro">
+    <h1 class="dashboard-title">
+      <span class="line-1">Welcome to</span>
+      <span class="line-2">Company Dashboard </span>
+    </h1>
+    <p class="dashboard-subtitle">
+      Monitor departments, managers, and employees in real time through interactive analytics and insights
+    </p>
+  </div>
+
+  <!-- Charts -->
+  <div class="charts-themed-section">
+    <div class="charts-grid">
+      <div class="chart-card">
+        <app-entity-counts-column-chart></app-entity-counts-column-chart>
+      </div>
+
+      <div class="chart-card">
+        <app-employees-by-manager-pie-chart></app-employees-by-manager-pie-chart>
+      </div>
+
+      <div class="chart-card">
+        <app-employees-by-department-donut-chart></app-employees-by-department-donut-chart>
+      </div>
+
+      <div class="chart-card">
+        <app-employees-by-job-title-column-chart></app-employees-by-job-title-column-chart>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs with tables inside -->
+  <mat-tab-group disableRipple>
+
+
+
+    <mat-tab label="Departments">
+      <div class="table-container">
+        <app-department></app-department>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Managers">
+      <div class="table-container">
+        <app-manager></app-manager>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Employees">
+      <div class="table-container">
+        <app-employee></app-employee>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>

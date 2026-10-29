@@ -1,0 +1,179 @@
+.page-background {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-container {
+  width: 98%;
+  margin: auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.add-btn {
+  background-color: #6A7A94;
+  color: white;
+
+  &:hover {
+    background-color: #3A4663;
+  }
+}
+
+.table-wrapper {
+  width: 100%;
+  padding: 5px 0;
+  box-sizing: border-box;
+}
+
+.custom-table {
+  width: 98%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  table-layout: fixed;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  padding: 12px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+  white-space: nowrap !important;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+tr.mat-row:hover {
+  background-color: #f9fafb;
+}
+
+.mat-column-id {
+  width: 6%;
+  white-space: nowrap !important;
+}
+
+.mat-column-name {
+  width: 12%;
+}
+
+.mat-column-email {
+  width: 16%;
+}
+
+td.mat-column-email {
+  color: #6c757d !important;
+}
+
+.mat-column-salary {
+  width: 9%;
+  white-space: nowrap !important;
+}
+
+.mat-column-hireDate {
+  width: 12%;
+  white-space: nowrap !important;
+}
+
+.mat-column-jobTitle {
+  width: 11%;
+  text-align: left;
+}
+
+.mat-column-departmentName {
+  width: 11%;
+  text-align: left;
+}
+
+.mat-column-managerName {
+  width: 9%;
+}
+
+.mat-column-managerEmail {
+  width: 13%;
+}
+
+td.mat-column-managerEmail {
+  color: #6c757d !important;
+}
+
+.mat-column-actions {
+  width: 8%;
+  text-align: right;
+}
+
+
+
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #e9ecef;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #495057;
+}
+
+.main-text {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.manager-badge,
+.location-text {
+  display: inline-block;
+  white-space: normal;
+  max-width: 100%;
+}
+
+
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  mat-icon {
+    font-size: 20px;
+    color: #adb5bd;
+    transition: color 0.2s ease;
+  }
+
+  .edit-icon:hover mat-icon {
+    color: #2d6a4f;
+  }
+
+  .delete-icon:hover mat-icon {
+    color: #dc3545;
+  }
+}

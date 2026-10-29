@@ -1,0 +1,58 @@
+<div class="department-form side-drawer">
+  <form [formGroup]="form" (ngSubmit)="save()">
+
+    <!-- Department Name -->
+    <div class="form-field">
+      <label>Department Name</label>
+      <input formControlName="departmentName" placeholder="Enter department name" />
+      <div class="error" *ngIf="form.get('departmentName')?.invalid && form.get('departmentName')?.touched">
+        <small *ngIf="form.get('departmentName')?.errors?.['required']">
+          Department name is required.
+        </small>
+        <small *ngIf="form.get('departmentName')?.errors?.['minlength']">
+          Must be at least 3 characters.
+        </small>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="form-field">
+      <label>Location</label>
+      <input formControlName="location" placeholder="Enter location" />
+      <div class="error" *ngIf="form.get('location')?.invalid && form.get('location')?.touched">
+        <small *ngIf="form.get('location')?.errors?.['required']">
+          Location is required.
+        </small>
+        <small *ngIf="form.get('location')?.errors?.['minlength']">
+          Must be at least 3 characters.
+        </small>
+      </div>
+    </div>
+
+    <!-- Manager Dropdown -->
+    <div class="form-field">
+      <label>Manager</label>
+      <mat-form-field appearance="fill" class="small-select">
+        <mat-select formControlName="managerId" placeholder="Select manager">
+          <mat-option *ngFor="let manager of managers" [value]="manager.id">
+            {{ manager.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="error" *ngIf="form.get('managerId')?.invalid && form.get('managerId')?.touched">
+        <small>Please select a manager.</small>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="form-buttons">
+      <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">
+        {{ isNew ? 'Save' : 'Edit' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()" color="accent">
+        Cancel
+      </button>
+    </div>
+
+  </form>
+</div>

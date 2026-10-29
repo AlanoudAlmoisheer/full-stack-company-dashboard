@@ -1,0 +1,120 @@
+.page-background {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-container {
+  width: 95%;
+  margin: auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+
+.add-btn {
+  background-color: #6A7A94;
+
+  color: white;
+
+  &:hover {
+    background-color: #3A4663;
+  }
+}
+
+
+.custom-table {
+  width: 92%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+  th.mat-header-cell {
+    color: #6c757d;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  tr.mat-row {
+    height: 70px;
+
+    &:hover {
+      background-color: #f1f3f5;
+    }
+  }
+
+  td.mat-cell {
+    padding: 10px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+  }
+
+  td.mat-column-managerEmail {
+    color: #6c757d !important;
+  }
+
+
+  .name-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+
+
+  .main-text {
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+
+  .location-text {
+    color: #6c757d;
+    font-size: 14px;
+  }
+
+
+  .manager-badge {
+    background-color: #8FA1BC;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+  }
+
+
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+
+    button mat-icon {
+      font-size: 20px;
+      color: #adb5bd;
+    }
+
+    .edit-icon:hover mat-icon {
+      color: #2d6a4f;
+    }
+
+    .delete-icon:hover mat-icon {
+      color: #dc3545;
+    }
+  }
+}

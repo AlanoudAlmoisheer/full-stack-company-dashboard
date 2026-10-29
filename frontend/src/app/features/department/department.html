@@ -1,0 +1,71 @@
+<mat-drawer-container class="page-background" autosize>
+  <mat-drawer #drawer mode="side" position="end" class="side-drawer">
+    <app-department-form [department]="selectedDepartment" [managers]="managers" (close)="closeDrawer()"
+      (saveDepartment)="saveDepartment($event)">
+    </app-department-form>
+  </mat-drawer>
+
+  <div class="page-container">
+    <div class="header-container">
+      <h1 class="page-title">Departments</h1>
+      <button mat-fab class="add-btn" (click)="openAdd()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+    <div class="table-wrapper">
+      <table mat-table [dataSource]="departments" class="custom-table">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let dept"> {{dept.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="departmentName">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let dept">
+            <div class="name-cell">
+              <span class="main-text">{{dept.departmentName}}</span>
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="location">
+          <th mat-header-cell *matHeaderCellDef> Location </th>
+          <td mat-cell *matCellDef="let dept">
+            <span class="location-text">{{dept.location}}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="managerName">
+          <th mat-header-cell *matHeaderCellDef> Manager Name </th>
+          <td mat-cell *matCellDef="let dept">
+            <span class="manager-badge">{{dept.managerName}}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="managerEmail">
+          <th mat-header-cell *matHeaderCellDef> Manager Email </th>
+          <td mat-cell *matCellDef="let dept"> {{dept.managerEmail}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let dept">
+            <div class="action-buttons">
+              <button mat-icon-button (click)="openEdit(dept)" class="edit-icon">
+                <mat-icon>edit_note</mat-icon>
+              </button>
+              <button mat-icon-button (click)="deleteDepartment(dept.id)" class="delete-icon">
+                <mat-icon>delete_outline</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</mat-drawer-container>

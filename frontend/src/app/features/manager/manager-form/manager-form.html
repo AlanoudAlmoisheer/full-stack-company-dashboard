@@ -1,0 +1,54 @@
+<div class="manager-form side-drawer">
+  <form [formGroup]="form" (ngSubmit)="save()">
+
+    <!-- Name -->
+    <div class="form-field">
+      <label>Name</label>
+      <input formControlName="name" placeholder="Enter name" />
+      <div class="error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+        <small *ngIf="form.get('name')?.errors?.['required']">Name is required.</small>
+        <small *ngIf="form.get('name')?.errors?.['minlength']">Must be at least 2 characters.</small>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-field">
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="Enter email" />
+      <div class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        <small *ngIf="form.get('email')?.errors?.['required']">Email is required.</small>
+        <small *ngIf="form.get('email')?.errors?.['email']">Enter a valid email.</small>
+      </div>
+    </div>
+
+    <!-- Salary -->
+    <div class="form-field">
+      <label>Salary</label>
+      <input type="number" formControlName="salary" placeholder="Enter salary" />
+      <div class="error" *ngIf="form.get('salary')?.invalid && form.get('salary')?.touched">
+        <small *ngIf="form.get('salary')?.errors?.['required']">Salary is required.</small>
+        <small *ngIf="form.get('salary')?.errors?.['min']">Salary must be greater than 0.</small>
+      </div>
+    </div>
+
+    <!-- Hire Date -->
+    <div class="form-field">
+      <label>Hire Date</label>
+      <input type="date" formControlName="hireDate" />
+      <div class="error" *ngIf="form.get('hireDate')?.invalid && form.get('hireDate')?.touched">
+        <small *ngIf="form.get('hireDate')?.errors?.['required']">Hire date is required.</small>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="form-buttons">
+      <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">
+        {{ isNew ? 'Save' : 'Edit' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()" color="accent">
+        Cancel
+      </button>
+    </div>
+
+  </form>
+</div>

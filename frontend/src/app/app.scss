@@ -1,0 +1,262 @@
+:root {
+  --primary: #6366F1;
+  --primary-light: rgba(99, 102, 241, 0.1);
+  --accent: #F43F5E;
+  --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --text-secondary: #64748B;
+}
+
+:root {
+  --primary: #6366F1;
+  --primary-light: rgba(99, 102, 241, 0.1);
+  --accent: #F43F5E;
+  --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --text-secondary: #64748B;
+}
+
+
+.dashboard-title {
+  text-align: left;
+  font-size: 40px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-top: 150px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+
+.dashboard-title .line-1 {
+  display: block;
+  color: #64748b;
+}
+
+.dashboard-title .line-2 {
+  display: block;
+  color: #1e293b;
+}
+
+.dashboard-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: left;
+  margin-left: 30px;
+  margin-bottom: px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  background-image: linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.85)), url("/assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+    pointer-events: none;
+  }
+
+  .global-table-text {
+    color: #CBD5E1;
+  }
+
+  app-header {
+    display: block;
+    margin-bottom: 40px;
+    margin-top: 30px;
+  }
+
+  /* Tabs Styling */
+
+  ::ng-deep .mat-mdc-tab-header {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 999px !important;
+    padding: 4px !important;
+    width: fit-content !important;
+    margin: 30px auto 0 !important;
+  }
+
+  /* Remove default underline */
+  ::ng-deep .mat-ink-bar {
+    display: none !important;
+  }
+
+  /* Tab labels */
+  ::ng-deep .mat-mdc-tab {
+    min-width: auto !important;
+    padding: 10px 24px !important;
+    margin: 0 !important;
+    border-radius: 999px !important;
+    font-weight: 500 !important;
+    color: #1E293B !important;
+    transition: all 0.2s ease !important;
+    opacity: 1 !important;
+  }
+
+  /* Active tab */
+  ::ng-deep .mat-mdc-tab.mdc-tab--active {
+    background-color: #6A7A94 !important;
+    border-radius: 999px !important;
+  }
+
+  ::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+    color: #ffffff !important;
+  }
+
+  /* Hover effect */
+  ::ng-deep .mat-mdc-tab:hover {
+    background-color: rgba(99, 102, 241, 0.08);
+  }
+
+  /* Spacing below tabs */
+  ::ng-deep .mat-mdc-tab-body-wrapper {
+    margin-top: 30px;
+  }
+
+  ::ng-deep .mat-mdc-tab .mdc-tab-indicator {
+    display: none !important;
+  }
+
+  ::ng-deep .mat-mdc-tab .mdc-tab-indicator__content {
+    display: none !important;
+  }
+
+  /* Charts Grid Section */
+  .charts-themed-section {
+    max-width: 850px;
+    /* smaller for better background quality */
+    margin: 40px auto 60px;
+    background-color: #f8fafc;
+    border-radius: 32px;
+    position: relative;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 220px;
+      /* slightly smaller */
+
+      background-image: url("/assets/images/theme-shapes.png");
+      background-size: 100% 220px;
+      background-position: top center;
+      background-repeat: no-repeat;
+
+      z-index: 1;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+  }
+
+
+  /* Charts Grid */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    margin-top: 120px;
+
+    justify-items: center;
+    /* center cards */
+    align-items: center;
+  }
+
+
+  /* Chart Card */
+  .chart-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #F1F5F9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    width: 360px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  /* Center Highcharts - USING ::NG-DEEP FOR VISIBILITY */
+  ::ng-deep .chart-card highcharts-chart {
+    width: 100%;
+    height: 280px;
+    /* Increased to fill more of the standardized card */
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Active Chart */
+
+  .chart-card.active {
+    background: #eef2ff;
+    border: 2px solid #6366f1;
+    box-shadow: 0 14px 32px rgba(99, 102, 241, 0.3);
+    transform: scale(1.02);
+  }
+
+
+  /* Table Styling */
+
+  ::ng-deep .mat-mdc-table {
+    width: 100%;
+  }
+
+  ::ng-deep .mat-mdc-header-cell,
+  ::ng-deep .mat-mdc-cell {
+    white-space: normal !important;
+    word-break: break-word;
+  }
+
+  ::ng-deep .action-column {
+    width: 90px !important;
+    max-width: 90px !important;
+  }
+
+  ::ng-deep .mat-mdc-icon-button {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 2px !important;
+  }
+
+  ::ng-deep .mat-mdc-cell:last-child {
+    padding-right: 4px !important;
+  }
+}
